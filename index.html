@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Maaf Sayang</title>
+<style>
+body {
+  margin: 0;
+  background: black;
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  white-space: nowrap;
+  font-size: 24px;
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.slide-right {
+  animation: rightMove 8s linear infinite;
+}
+
+.slide-left {
+  animation: leftMove 8s linear infinite;
+}
+
+@keyframes rightMove {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes leftMove {
+  from { transform: translateX(100%); }
+  to { transform: translateX(-100%); }
+}
+</style>
+</head>
+<body>
+
+<div class="container" id="container"></div>
+
+<script>
+const text = "maaf yaa sayanggg, aku janji bakal lebih dengerin dan kasih PISS kamu 💗 ";
+const container = document.getElementById("container");
+
+for (let i = 0; i < 30; i++) {
+  const row = document.createElement("div");
+  row.classList.add("row");
+  row.classList.add(i % 2 === 0 ? "slide-right" : "slide-left");
+  row.innerText = text.repeat(10);
+  container.appendChild(row);
+}
+</script>
+
+</body>
+</html>
